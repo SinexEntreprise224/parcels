@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title%}
+    Colis
+{% endblock %}
+{% block content %}
+    {% if parcels.count == 0 %}
+    {% else %}
+        <H1>Colis</H1>
+        <ul>
+            {% for parcel in parcels %}
+                <li>{{ parcel }} <a href="{% url 'tracking' parcel.id %}">Detail</a></li> 
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <a href="/">page d'accueil</a>
+{% endblock %}

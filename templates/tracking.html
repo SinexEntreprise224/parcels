@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Suivie de colis
+{% endblock %}
+
+{% block content %}
+    {% if not tracked_parcels %}
+        <h1>{{ error }}</h1>
+    {% else %}
+        <h1>{{ tracked_parcels }}</h1>
+        <p>staus {{ tracked_parcels.status }}</p>
+        <p>Numéro de suivi  {{ tracked_parcels.tracking_number }}</p>
+    {% endif %}
+{% endblock %}

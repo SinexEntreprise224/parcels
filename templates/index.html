@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title%}
+    Home
+{% endblock %}
+
+{% block content %}
+    <p>Hello</p>
+    {% if nb_colis == 0 %}
+        <p>Il n'y a plus aucun colis</p>
+    {% else %}
+        <p>Il y a {{ nb_colis }}</p>
+        <a href="/parcels">Voir les colis</a>
+    {% endif %}
+    <br>
+    <a href="/add">Ajouter un colis</a>
+{% endblock %}
